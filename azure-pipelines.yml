@@ -13,19 +13,8 @@ jobs:
   steps:
   - checkout: self
   - script: |
-      # Navigate to the project directory
       cd $(Build.SourcesDirectory)
-
-      # Switch to the main branch
       git checkout main
-
-      # Pull the latest changes from the main branch
       git pull origin main
-
-      # Merge the feature branch into the main branch
       git merge certification_feature
-
-      # Run build commands
-      # Replace the following command with your actual build commands
-      # ./build-command.sh
     displayName: 'Build'
