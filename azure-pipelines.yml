@@ -1,12 +1,12 @@
 trigger:
-- feature-branch
+- certification_feature
 - main
 
 pr:
 - main
 
 pool:
-  name: 'DESKTOP-JFKLF5C'  # Replace with the name of your agent pool
+  name: 'Default'  # Replace with the name of your agent pool
 
 jobs:
 - job: Build
@@ -27,5 +27,5 @@ jobs:
 
       # Run build commands
       # Replace the following command with your actual build commands
-      ./build-command.sh
+      # ./build-command.sh
     displayName: 'Build'
