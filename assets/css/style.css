@@ -1895,15 +1895,14 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 }
 
-@media (min-width: 450px) and (max-width: 580px) {
-  /* Your styles for mobile devices */
-  .skills-content{
-    font-size: 10px;
-  }
-}
-
-/* @media (min-width: 320px) and (max-width: 767px) {
+/* @media (min-width: 450px) and (max-width: 580px) {
   .skills-content{
     font-size: 10px;
   }
 } */
+
+@media (min-width: 320px) and (max-width: 580px) {
+  .skills-content{
+    font-size: 10px;
+  }
+}
