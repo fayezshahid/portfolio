@@ -766,79 +766,55 @@
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a target="_blank" href="https://github.com/fayezshahid/photon">
-
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#" data-project-modal data-project="photon">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <!-- <ion-icon name="eye-outline"></ion-icon> -->
-                    <ion-icon name="logo-github"></ion-icon>
+                    <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
                   <img src="./assets/images/project-1.png" alt="finance" loading="lazy">
                 </figure>
-
                 <h3 class="project-title">Photo Management System</h3>
-
                 <p class="project-category">Web development</p>
-
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a target="_blank" href="https://github.com/fayezshahid/frontend">
-
+            <li class="project-item active" data-filter-item data-category="web design">
+              <a href="#" data-project-modal data-project="dockerized-react">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <!-- <ion-icon name="eye-outline"></ion-icon> -->
-                    <ion-icon name="logo-github"></ion-icon>
+                    <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-3.png" alt="fundo" loading="lazy">
+                  <img src="./assets/images/project-3.png" alt="dockerized react" loading="lazy">
                 </figure>
-
                 <h3 class="project-title">Dockerized React Application</h3>
-
-                <p class="project-category">Web design</p>
-
+                <p class="project-category">Web Design</p>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a target="_blank" href="https://github.com/fayezshahid/nerlstm">
-
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <a href="#" data-project-modal data-project="autoencoders">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <!-- <ion-icon name="eye-outline"></ion-icon> -->
-                    <ion-icon name="logo-github"></ion-icon>
+                    <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-5.png" alt="brawlhalla" loading="lazy">
+                  <img src="./assets/images/project-8.png" alt="autoencoders" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Disease Detection System</h3>
-
+                <h3 class="project-title">Face Recognition Autoencoders</h3>
                 <p class="project-category">Machine Learning</p>
-
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a target="_blank" href="https://github.com/fayezshahid/movie_recommendation_system">
-
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <a href="#" data-project-modal data-project="criccom-ai">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <!-- <ion-icon name="eye-outline"></ion-icon> -->
-                    <ion-icon name="logo-github"></ion-icon>
+                    <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-6.png" alt="brawlhalla" loading="lazy">
+                  <img src="./assets/images/project-7.png" alt="criccom ai" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Movie Recommendation System</h3>
-
+                <h3 class="project-title">CricCom: AI-Powered Cricket Commentary</h3>
                 <p class="project-category">Machine Learning</p>
-
               </a>
             </li>
 
@@ -848,8 +824,72 @@
 
       </article>
 
-
-
+      <div class="project-modal-container" data-project-modal-container>
+        <div class="project-overlay" data-project-overlay></div>
+        
+        <section class="project-modal">
+          <button class="project-modal-close-btn" data-project-modal-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+          
+          <div class="project-modal-content">
+            <div class="project-modal-img-wrapper">
+              <img src="./assets/images/project-1.png" alt="Project Image" data-project-modal-img>
+              
+              <h3 class="project-modal-title" data-project-modal-title></h3>
+              <p class="project-modal-category" data-project-modal-category></p>
+              
+              <div class="project-modal-tech-stack" data-project-modal-tech-stack>
+                <h4>Tech Stack: </h4>
+                <ul class="tech-stack-list">
+                  <li><span class="tech-tag"></span></li>
+                  <li><span class="tech-tag"></span></li>
+                  <li><span class="tech-tag"></span></li>
+                  <li><span class="tech-tag"></span></li>
+                  <li><span class="tech-tag"></span></li>
+                  <li><span class="tech-tag"></span></li>
+                  <li><span class="tech-tag"></span></li>
+                  <li><span class="tech-tag"></span></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="project-modal-info">
+              <div class="project-modal-description" data-project-modal-description>
+                <p></p>
+              </div>
+              
+              <div class="project-modal-tasks">
+                <h4>Key Features:</h4>
+                <ul data-project-modal-tasks>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+              
+              <div class="project-modal-actions">
+                <a href="" target="_blank" class="project-modal-btn frontend-btn" data-project-modal-frontend>
+                  <ion-icon name="logo-angular"></ion-icon>
+                  <span>Frontend Repo</span>
+                </a>
+                <a href="" target="_blank" class="project-modal-btn backend-btn" data-project-modal-backend>
+                  <ion-icon name="server-outline"></ion-icon>
+                  <span>Backend Repo</span>
+                </a>
+                <a href="" target="_blank" class="project-modal-btn live-btn" data-project-modal-live>
+                  <ion-icon name="globe-outline"></ion-icon>
+                  <span>Live App</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
 
       <!--
