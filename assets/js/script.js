@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
       image: "./assets/images/project-1.png",
       techStack: [
         "Java Spring Boot 3", "Angular", "PostgreSQL", "JWT Authentication",
-        "AWS S3", "CloudFront", "Docker", "AWS ECS"
+        "AWS S3", "CloudFront", "Docker", "AWS ECS", "Github Actions (CI/CD)"
       ],
       description: "A full-stack social photo cloud platform that enables users to manage and share their photo collections seamlessly. Built with enterprise-grade technologies and deployed on AWS with cost-optimized serverless architecture.",
       tasks: [
