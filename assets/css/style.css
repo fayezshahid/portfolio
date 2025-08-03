@@ -1024,11 +1024,6 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-item-icon-box {
-  --scale: 1;
-  opacity: 1;
-}
-
 .project-item-icon-box ion-icon { --ionicon-stroke-width: 50px; }
 
 .project-img img {
@@ -1037,8 +1032,6 @@ main {
   object-fit: cover;
   transition: var(--transition-1);
 }
-
-.project-item > a:hover img { transform: scale(1.1); }
 
 .project-title,
 .project-category { margin-left: 10px; }
@@ -1055,9 +1048,19 @@ main {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-
+.category-icon {
+  font-size: 16px;
+  color: var(--orange-yellow-crayola);
+  opacity: 0.8;
+  transition: var(--transition-1);
+  flex-shrink: 0; /* Prevents icon from shrinking */
+}
 
 
 
@@ -1624,40 +1627,20 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .modal-avatar-box img { width: 80px; }
 
-
-
-  /**
-   * PORTFOLIO
-   */
-
-  .article-title { padding-bottom: 20px; }
-
-  .filter-select-box { display: none; }
-
-  .filter-list {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 25px;
-    padding-left: 5px;
-    margin-bottom: 30px;
-  }
-
-  .filter-item button {
-    color: var(--light-gray);
-    font-size: var(--fs-5);
-    transition: var(--transition-1);
-  }
-
-  .filter-item button:hover { color: var(--light-gray-70); }
-
-  .filter-item button.active { color: var(--orange-yellow-crayola); }
-
   /* portfolio and blog grid */
 
+  .project-item > a:hover img { transform: scale(1.1); }
+
+  .project-item > a:hover .project-item-icon-box {
+    --scale: 1;
+    opacity: 1;
+  }
+
+  .category-icon {
+    display: none;
+  }
+
   .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
-
-
 
   /**
    * CONTACT
@@ -1774,6 +1757,33 @@ textarea.form-input::-webkit-resizer { display: none; }
   /**
    * PORTFOLIO
    */
+
+    /**
+   * PORTFOLIO
+   */
+
+  .article-title { padding-bottom: 20px; }
+
+  .filter-select-box { display: none; }
+
+  .filter-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    padding-left: 5px;
+    margin-bottom: 30px;
+  }
+
+  .filter-item button {
+    color: var(--light-gray);
+    font-size: var(--fs-5);
+    transition: var(--transition-1);
+  }
+
+  .filter-item button:hover { color: var(--light-gray-70); }
+
+  .filter-item button.active { color: var(--orange-yellow-crayola); }
 
   .project-list { grid-template-columns: repeat(3, 1fr); }
 

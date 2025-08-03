@@ -1,11 +1,24 @@
 'use strict';
 
+// Tech stack filter keywords - you can modify this array anytime
+const FILTER_KEYWORDS = [
+  'react', 'angular', 'spring', 'python', 'docker', 'azure', 'aws', 'tensorflow', 'pytorch'
+];
 
+// Function to check if project matches filter keyword
+function projectMatchesFilter(projectKey, filterKeyword) {
+  if (filterKeyword === 'all') return true;
+  
+  const project = projectData[projectKey];
+  if (!project || !project.techStack) return false;
+  
+  return project.techStack.some(tech => 
+    tech.toLowerCase().includes(filterKeyword.toLowerCase())
+  );
+}
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
@@ -13,8 +26,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
 
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
@@ -55,8 +66,6 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
 
-
-
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
@@ -65,57 +74,48 @@ const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
 select.addEventListener("click", function () { elementToggleFunc(this); });
 
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-
-  });
-}
-
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
+// Updated filter function for tech stack based filtering
 const filterFunc = function (selectedValue) {
-
   for (let i = 0; i < filterItems.length; i++) {
-
+    const projectKey = filterItems[i].querySelector('[data-project]')?.dataset.project;
+    
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    } else if (projectKey && projectMatchesFilter(projectKey, selectedValue)) {
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
     }
-
   }
+}
 
+// add event in all select items (mobile dropdown)
+for (let i = 0; i < selectItems.length; i++) {
+  selectItems[i].addEventListener("click", function () {
+    let selectedValue = this.dataset.filter || this.innerText.toLowerCase();
+    selectValue.innerText = this.innerText;
+    elementToggleFunc(select);
+    filterFunc(selectedValue);
+  });
 }
 
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
 
 for (let i = 0; i < filterBtn.length; i++) {
-
   filterBtn[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
+    let selectedValue = this.dataset.filter || this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
 
     lastClickedBtn.classList.remove("active");
     this.classList.add("active");
     lastClickedBtn = this;
-
   });
-
 }
-
-
 
 // contact form variables
 const form = document.querySelector("[data-form]");
@@ -135,8 +135,6 @@ for (let i = 0; i < formInputs.length; i++) {
 
   });
 }
-
-
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
@@ -160,6 +158,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+// Project Modal Functionality
 document.addEventListener('DOMContentLoaded', function() {
   const projectModalContainer = document.querySelector('[data-project-modal-container]');
   const projectOverlay = document.querySelector('[data-project-overlay]');
@@ -198,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
       category: "Web Development",
       image: "./assets/images/project-3.png",
       techStack: [
-        "MERN Stack", "Docker", "Azure Container Registry", "Azure App Services",
+        "React", "MERN Stack", "Docker", "Azure Container Registry", "Azure App Services",
         "Terraform", "Azure DevOps", "Jest", "Chai", "CI/CD"
       ],
       description: "A MERN application with user authentication, containerized using Docker, and deployed via Azure Container Registry to Azure App Services. Implemented infrastructure as code with Terraform and CI/CD pipelines with comprehensive testing.",
@@ -263,6 +262,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   };
+  
+  // Make projectData available globally for filtering
+  window.projectData = projectData;
   
   // Open modal function
   function openProjectModal(projectKey) {
