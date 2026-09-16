@@ -140,23 +140,30 @@ for (let i = 0; i < formInputs.length; i++) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
+const showPage = function (pageName) {
+  const targetPage = [...pages].find(page => page.dataset.page === pageName);
+  if (!targetPage) return;
+
+  pages.forEach(page => page.classList.toggle("active", page === targetPage));
+  navigationLinks.forEach(link => {
+    link.classList.toggle("active", link.innerHTML.toLowerCase() === pageName);
+  });
+  window.scrollTo(0, 0);
+};
+
+// Keep the visible tab synchronized with the URL hash.
+const showPageFromHash = function () {
+  showPage(window.location.hash.slice(1).toLowerCase() || "about");
+};
+
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
-    }
-
+    window.location.hash = this.innerHTML.toLowerCase();
   });
 }
+
+window.addEventListener("hashchange", showPageFromHash);
+showPageFromHash();
 
 // Project Modal Functionality
 document.addEventListener('DOMContentLoaded', function() {

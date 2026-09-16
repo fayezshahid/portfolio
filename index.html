@@ -178,12 +178,16 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link>Thesis</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Certifications</button>
+            <button class="navbar-link" data-nav-link>Portfolio</button>
           </li>
+
+          <!-- <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Certifications</button>
+          </li> -->
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
@@ -307,6 +311,25 @@
           <h3 class="h3 testimonials-title">Testimonials</h3>
 
           <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Peer Nilsson" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Peer Nilsson</h4>
+                <span style="display: none;" data-testimonials-date>CEO @ Filehub - 15 September, 2026</span>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Fayez worked independently, asked the right questions early, and communicated openly about status and obstacles. What stood out most was how he adapted to a German working environment — our platform connects to German bookkeeping systems, where the hard part is the accounting logic and conventions, not the API. Fayez worked his way into that domain, corresponded directly with third-party providers in German, and handled requirements from German-speaking clients. Finding your footing in an unfamiliar domain and language at once isn't easy, and he managed it.
+                  </p>
+                </div>
+
+              </div>
+            </li>
 
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
@@ -696,6 +719,50 @@
 
 
 
+      <!--
+        - #THESIS
+      -->
+
+      <article class="thesis" data-page="thesis">
+
+        <header>
+          <h2 class="h2 article-title">Thesis</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="school-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Master's Thesis</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Ongoing | HPC Group, Prof. Dr.-Ing. André Brinkmann</h4>
+
+              <span>Jan 2026 — Present | Saarland University</span>
+
+              <p class="timeline-text">
+                • Designed and validated a cross-level energy measurement pipeline for HPC systems, integrating SLURM job accounting, Ganglia node-level monitoring, and PMT application-level instrumentation across containerized (Singularity/Apptainer) deployments on a multi-node production cluster.<br>
+                • Diagnosed and resolved container runtime incompatibilities (glibc version mismatches, missing shared libraries, network configuration conflicts) to enable reliable benchmark execution across three workload classes (CPU-, memory-, and I/O-bound), verified via NAS Parallel Benchmarks, STREAM, and fio with correct parallel scaling behavior.<br>
+                • Authored a factorial experimental design comparing energy measurement granularity, synchronization, and accuracy across three independent monitoring tools, directly extending prior published work by introducing systematic cross-level correlation methodology.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+      </article>
+
+
+
 
       <!--
         - #PORTFOLIO
@@ -931,6 +998,7 @@
         - #CERTIFICATIONS
       -->
 
+      <!--
       <article class="blog" data-page="certifications">
 
         <header>
@@ -938,9 +1006,9 @@
         </header>
 
         <section class="blog-posts">
-          <!-- <p style="color: gray; text-align: center;">
+          <p style="color: gray; text-align: center;">
             COMING UP SOON.....
-          </p> -->
+          </p>
           <ul class="blog-posts-list">
 
             <li class="blog-post-item">
@@ -1079,6 +1147,7 @@
         </section>
 
       </article>
+      -->
 
 
 
